@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <fragment
+        android:id="@+id/notesActivity"
+        android:label="NotesActivity"
+        tools:layout="@layout/activity_notes">
+        <action
+            android:id="@+id/action_notes_to_main"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_notesActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main">
+
+        <!-- Define the action to navigate to NotesActivity -->
+        <action
+            android:id="@+id/action_main_to_notes"
+            app:destination="@id/notesActivity" />
+        <action
+            android:id="@+id/action_mainActivity_to_notesActivity"
+            app:destination="@id/notesActivity" />
+    </fragment>
+
+</navigation>
